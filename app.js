@@ -11,6 +11,8 @@ const cors = require("cors");
 const corsOptions = require("./src/helpers/corsOptions");
 const mongoSanitize = require("express-mongo-sanitize");
 const apiLimiter = require("./src/middlewares/rateLimit");
+const moment = require("moment-timezone");
+moment.tz.setDefault("Europe/Istanbul");
 
 app.use(express.json());
 app.use(express.json({ limit: "50mb" }));

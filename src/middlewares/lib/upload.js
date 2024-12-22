@@ -23,19 +23,16 @@ const fileFilter = (req, file, cb) => {
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    // yuklemek istedigimiz dosya konumunu belirtiyoruz
     const rootDir = path.dirname(require.main.filename);
     console.log("require.main.filename:", require.main.filename);
-    fs.mkdirSync(path.join(rootDir, "/public/uploads"), { recursive: true }); // burada dosyayi olusturucak
-    cb(null, path.join(rootDir, "/public/uploads")); // dosyanin icerisine yukleme yapicak
+    fs.mkdirSync(path.join(rootDir, "/public/uploads"), { recursive: true });
+    cb(null, path.join(rootDir, "/public/uploads"));
   },
   filename: function (req, file, cb) {
     const extension = file.mimetype.split("/")[1];
-
     if (!req.savedImages) req.savedImages = [];
 
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-
     let url = `image_${uniqueSuffix}.${extension}`;
 
     req.savedImages = [...req.savedImages, path.join(url)];

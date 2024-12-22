@@ -27,14 +27,14 @@ class authValidation {
             .email()
             .trim()
             .min(3)
-            .max(20)
+            .max(30)
             .required()
             .messages({
               "string.base": "Email alani normal metin olmalidir",
               "string.empty": "Email alani bos olamaz",
               "string.min": "Email alani en az 3 karakter olmalidir",
               "string.email": "Lutfen gecerli bir email giriniz",
-              "string.max": "Email alani en fazla 20 karakter olmalidir",
+              "string.max": "Email alani en fazla 30 karakter olmalidir",
               "string.required": "Email alani zorunludur",
             }),
           password: joi.string().trim().min(6).max(10).required().messages({
@@ -63,14 +63,14 @@ class authValidation {
             .email()
             .trim()
             .min(3)
-            .max(20)
+            .max(30)
             .required()
             .messages({
               "string.base": "Email alani normal metin olmalidir",
               "string.empty": "Email alani bos olamaz",
               "string.min": "Email alani en az 3 karakter olmalidir",
               "string.email": "Lutfen gecerli bir email giriniz",
-              "string.max": "Email alani en fazla 20 karakter olmalidir",
+              "string.max": "Email alani en fazla 30 karakter olmalidir",
               "string.required": "Email alani zorunludur",
             }),
           password: joi.string().trim().min(6).max(10).required().messages({
